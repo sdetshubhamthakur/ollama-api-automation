@@ -517,8 +517,6 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 - [Ollama API Documentation](https://github.com/ollama/ollama/blob/main/docs/api.md)
 - [RestAssured Documentation](https://github.com/rest-assured/rest-assured/wiki)
-- [TestNG Documentation](https://testng.org/doc/documentation-main.html)
-- [AI Testing Best Practices](https://www.example.com/ai-testing)
 
 ---
 
