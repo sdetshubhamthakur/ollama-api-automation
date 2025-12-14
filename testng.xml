@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Ollama API Test Suite" verbose="1">
+    
+    <!-- Suite-level parameters -->
+    <parameter name="baseUri" value="http://localhost:11434"/>
+    <parameter name="defaultModel" value="llama3.2:3b"/>
+    
+    <!-- Listeners for reporting -->
+    <listeners>
+        <listener class-name="org.testng.reporters.EmailableReporter"/>
+    </listeners>
+    
+    <!-- Test: Model Management (Fast tests) -->
+    <test name="Model Management Tests" preserve-order="true">
+        <classes>
+            <class name="tests.ModelManagementTests"/>
+        </classes>
+    </test>
+    
+    <!-- Test: Basic Chat Functionality -->
+    <test name="Chat Tests" preserve-order="true">
+        <classes>
+            <class name="tests.ChatTests">
+                <!-- Run basic tests first -->
+                <methods>
+                    <include name="testSimpleChat"/>
+                    <include name="testQuestionAnswering"/>
+                    <include name="testResponseCompleteness"/>
+                    <include name="testMultiTurnConversation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test: Advanced Scenarios -->
+    <test name="Advanced Tests" preserve-order="true">
+        <classes>
+            <class name="tests.AdvancedTests">
+                <methods>
+                    <include name="testResponseConsistency"/>
+                    <include name="testResponseRelevance"/>
+                    <include name="testFactualAccuracy"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test: Performance & Load (Run separately if needed) -->
+    <test name="Performance Tests" enabled="false">
+        <classes>
+            <class name="tests.AdvancedTests">
+                <methods>
+                    <include name="testConcurrentRequests"/>
+                    <include name="testLoadSequential"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Test: Full Regression (All tests) -->
+    <test name="Full Regression" enabled="false">
+        <packages>
+            <package name="tests.*"/>
+        </packages>
+    </test>
+    
+</suite>
