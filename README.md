@@ -498,7 +498,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ## 👤 Author
 
-**Your Name**
+**Shubham Thakur**
 - LinkedIn: [Shubham Thakur](https://www.linkedin.com/in/shubhamthakur01/)
 - GitHub: [@sdetshubhamthakur](https://github.com/sdetshubhamthakur)
 
